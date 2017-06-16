@@ -21,8 +21,8 @@
 		<div ng-repeat="person in heroes.heroList | filter: search">
 			<h3 ng-class="{marv: person.comics == 'Marvel'}">{{person.name}}</h3>
 			<p>{{person.phone_no}}</p>
-			<img ng-init="person[$index].hide = false" ng-show="{person[$index].hide}" src="{{person.image_url}}">
-			<button ng-click="{person[$index].hide = !hide}">Show Hero</button>
+			<img ng-init="person[$index].hide = false" ng-show="person[$index].hide" src="{{person.image_url}}">
+			<button ng-click="person[$index].hide = !person[$index].hide">Show/Hide Hero</button>
 		</div>
 	</div>
 </main>
