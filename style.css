@@ -1,0 +1,18 @@
+img{
+	width: 180px;
+}
+.people > div{
+	display: block;
+	width: 30%;
+	float: left;
+	margin: 0 1%;
+	text-align: center;
+}
+h3{
+	background: rgb(94, 149, 237);
+	color:white;
+}
+.marv{
+	background: red;
+	color: white;
+}

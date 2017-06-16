@@ -4,9 +4,29 @@
   <meta charset="UTF-8">
   <title>Superhero Phone Book</title>
   <link rel="stylesheet" href="style.css">
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+	<script type="text/javascript" src="app.js"></script>
 </head>
-<body>
+<body ng-app="heroApp">
+<header>
+	<h1>Need a Hero?</h1>
+	<h2>Give one a call!</h2>
+</header>
+<main ng-controller="PhoneBookController as heroes">
+	<div>
+		<p>Search</p>
+		<input type="text" ng-model="search">
+	</div>
+	<div class="people">
+		<div ng-repeat="person in heroes.heroList | filter: search">
+			<h3 ng-class="{marv: person.comics == 'Marvel'}">{{person.name}}</h3>
+			<p>{{person.phone_no}}</p>
+			<img ng-init="person[$index].hide = false" ng-show="{person[$index].hide}" src="{{person.image_url}}">
+			<button ng-click="{person[$index].hide = !hide}">Show Hero</button>
+		</div>
+	</div>
+</main>
 
-  <script src="app.js"></script>
+<script src="app.js"></script>
 </body>
 </html>
